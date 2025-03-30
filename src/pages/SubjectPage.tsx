@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -26,6 +26,11 @@ const subjectData = {
         { id: "algebra", title: "Einfache Gleichungen", description: "Erste Schritte mit Variablen und Gleichungen." },
         { id: "data", title: "Daten und Häufigkeiten", description: "Daten sammeln, darstellen und auswerten." },
       ],
+      "9": [
+        { id: "quadratic-functions", title: "Quadratische Funktionen", description: "Nullstellen, Scheitelpunktform und Anwendungen quadratischer Funktionen." },
+        { id: "pythagoras", title: "Satz des Pythagoras", description: "Anwendung und Beweise des Satzes des Pythagoras." },
+        { id: "probability", title: "Wahrscheinlichkeitsrechnung", description: "Laplace-Experimente und bedingte Wahrscheinlichkeiten." },
+      ],
       // Add more grades...
     }
   },
@@ -44,6 +49,11 @@ const subjectData = {
         { id: "texts", title: "Textsorten", description: "Verschiedene Textsorten kennenlernen und schreiben." },
         { id: "narration", title: "Erzähltechniken", description: "Spannende Geschichten schreiben." },
         { id: "poetry", title: "Gedichte", description: "Einfache Gedichte verstehen und interpretieren." },
+      ],
+      "9": [
+        { id: "novella", title: "Novellen", description: "Analyse und Interpretation von Novellen." },
+        { id: "argumentation", title: "Erörterung", description: "Aufbau und Strukturierung von Erörterungen." },
+        { id: "drama", title: "Drama", description: "Grundelemente des Dramas und wichtige Dramenwerke." },
       ],
       // Add more grades...
     }
@@ -64,6 +74,11 @@ const subjectData = {
         { id: "conversation", title: "Konversation", description: "Einfache Gespräche führen." },
         { id: "countries", title: "Länder und Kulturen", description: "Über verschiedene Länder sprechen." },
       ],
+      "9": [
+        { id: "tenses-advanced", title: "Fortgeschrittene Zeitformen", description: "Present Perfect Continuous und Past Perfect." },
+        { id: "text-analysis", title: "Textanalyse", description: "Methoden zur Analyse englischer Texte." },
+        { id: "usa-culture", title: "Amerikanische Kultur", description: "Wichtige Aspekte der amerikanischen Kultur und Geschichte." },
+      ],
       // Add more grades...
     }
   }
@@ -71,7 +86,7 @@ const subjectData = {
 
 const SubjectPage = () => {
   const { subject } = useParams<{ subject: string }>();
-  const [selectedGrade, setSelectedGrade] = useState("5");
+  const [selectedGrade, setSelectedGrade] = useState("9"); // Default to 9th grade
   
   // Safety check to make sure the subject exists
   const validSubject = subject as keyof typeof subjectData;
@@ -115,6 +130,13 @@ const SubjectPage = () => {
                 <p className="text-muted-foreground text-lg mt-2">
                   {currentSubject.description}
                 </p>
+                <div className="mt-4">
+                  <Button asChild variant="outline">
+                    <Link to="/grade9">
+                      Alle 9. Klasse Inhalte anzeigen
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -138,11 +160,16 @@ const SubjectPage = () => {
                 <div className="flex items-center mb-6">
                   <GraduationCap className="mr-2 h-5 w-5 text-muted-foreground" />
                   <h2 className="text-2xl font-semibold">Klasse {selectedGrade} - Themen</h2>
+                  {selectedGrade === "9" && (
+                    <span className="ml-3 inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">
+                      Empfohlen
+                    </span>
+                  )}
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {currentSubject.topics[selectedGrade as keyof typeof currentSubject.topics]?.map((topic) => (
-                    <Card key={topic.id} className="card-hover h-full">
+                    <Card key={topic.id} className={`card-hover h-full ${selectedGrade === "9" ? "border-2 border-green-200" : ""}`}>
                       <CardHeader>
                         <CardTitle>{topic.title}</CardTitle>
                         <CardDescription>{topic.description}</CardDescription>

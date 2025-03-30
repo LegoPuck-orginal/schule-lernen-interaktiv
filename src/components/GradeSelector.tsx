@@ -31,9 +31,17 @@ const GradeSelector = ({ selectedGrade, onGradeChange, className }: GradeSelecto
                 variant={selectedGrade === grade ? "default" : "outline"}
                 size="sm"
                 onClick={() => onGradeChange(grade)}
-                className={selectedGrade === grade ? "bg-primary text-white" : ""}
+                className={cn(
+                  selectedGrade === grade ? "bg-primary text-white" : "",
+                  grade === "9" ? "relative" : ""
+                )}
               >
                 {grade}
+                {grade === "9" && (
+                  <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-green-500 text-[10px] text-white">
+                    ✓
+                  </span>
+                )}
               </Button>
             ))}
           </div>

@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, Book, Video, FileText, PenLine } from 'lucide-react';
+import { ArrowLeft, Book, Video, FileText, PenLine, GraduationCap } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import VideoPlayer from '@/components/VideoPlayer';
@@ -52,7 +51,94 @@ const topicData = {
       }
     ]
   },
-  // German
+  // 9th grade Math content
+  "quadratic-functions": {
+    title: "Quadratische Funktionen",
+    subject: "math" as const,
+    gradeLevel: "9",
+    description: "Lerne alles über quadratische Funktionen, ihre Eigenschaften und Anwendungen.",
+    videos: [
+      {
+        id: "video1",
+        title: "Quadratische Funktionen Grundlagen",
+        description: "Die Form y = ax² + bx + c und ihre Bedeutung.",
+        videoId: "dQw4w9WgXcQ",
+      },
+      {
+        id: "video2",
+        title: "Nullstellen quadratischer Funktionen",
+        description: "Berechnung von Nullstellen mit der p-q-Formel und Faktorisierung.",
+        videoId: "dQw4w9WgXcQ",
+      },
+      {
+        id: "video3",
+        title: "Scheitelpunktform",
+        description: "Umwandlung in die Scheitelpunktform y = a(x-d)² + e.",
+        videoId: "dQw4w9WgXcQ",
+      }
+    ],
+    exercises: [
+      {
+        question: "Welche Normalform hat eine quadratische Funktion?",
+        options: ["f(x) = ax + b", "f(x) = ax² + bx + c", "f(x) = a/x", "f(x) = a·b^x"],
+        correctAnswer: 1,
+        explanation: "Die Normalform einer quadratischen Funktion ist f(x) = ax² + bx + c, wobei a ≠ 0 ist."
+      },
+      {
+        question: "Was beschreibt der Scheitelpunkt einer Parabel?",
+        options: ["Den höchsten Punkt der Kurve", "Den tiefsten Punkt der Kurve", "Den höchsten oder tiefsten Punkt der Kurve", "Den Schnittpunkt mit der y-Achse"],
+        correctAnswer: 2,
+        explanation: "Der Scheitelpunkt ist der höchste Punkt, wenn a < 0 ist, oder der tiefste Punkt, wenn a > 0 ist."
+      },
+      {
+        question: "Wie viele Nullstellen kann eine quadratische Funktion maximal haben?",
+        options: ["Eine", "Zwei", "Drei", "Unendlich viele"],
+        correctAnswer: 1,
+        explanation: "Eine quadratische Funktion kann maximal zwei Nullstellen haben, wenn die Diskriminante b² - 4ac positiv ist."
+      },
+      {
+        question: "Wie lautet die Formel für die Berechnung der Nullstellen?",
+        options: ["x = -b/a", "x = (-b ± √(b² - 4ac))/2a", "x = c/a", "x = -c/a"],
+        correctAnswer: 1,
+        explanation: "Die Formel zur Berechnung der Nullstellen einer quadratischen Funktion lautet x = (-b ± √(b² - 4ac))/2a."
+      }
+    ]
+  },
+  "pythagoras": {
+    title: "Satz des Pythagoras",
+    subject: "math" as const,
+    gradeLevel: "9",
+    description: "Der fundamentale Satz über rechtwinklige Dreiecke und seine Anwendungen.",
+    videos: [
+      {
+        id: "video1",
+        title: "Der Satz des Pythagoras erklärt",
+        description: "a² + b² = c² und was das bedeutet.",
+        videoId: "dQw4w9WgXcQ",
+      },
+      {
+        id: "video2",
+        title: "Anwendungen des Satzes",
+        description: "Praktische Anwendungen in Geometrie und Alltag.",
+        videoId: "dQw4w9WgXcQ",
+      }
+    ],
+    exercises: [
+      {
+        question: "Wie lautet der Satz des Pythagoras?",
+        options: ["a + b = c", "a · b = c", "a² + b² = c²", "a + b + c = 180°"],
+        correctAnswer: 2,
+        explanation: "Der Satz des Pythagoras besagt, dass in einem rechtwinkligen Dreieck die Summe der Quadrate der Katheten gleich dem Quadrat der Hypotenuse ist: a² + b² = c²."
+      },
+      {
+        question: "Ein rechtwinkliges Dreieck hat Katheten der Länge 3 cm und 4 cm. Wie lang ist die Hypotenuse?",
+        options: ["5 cm", "7 cm", "12 cm", "25 cm"],
+        correctAnswer: 0,
+        explanation: "Nach dem Satz des Pythagoras gilt: c² = 3² + 4² = 9 + 16 = 25, also c = 5 cm."
+      }
+    ]
+  },
+  // Other topics are kept from original data
   "grammar": {
     title: "Grundlegende Grammatik",
     subject: "german" as const,
@@ -93,7 +179,6 @@ const topicData = {
       }
     ]
   },
-  // English
   "basics": {
     title: "Englische Grundlagen",
     subject: "english" as const,
@@ -133,6 +218,86 @@ const topicData = {
         explanation: "'My name is Thomas' is the correct translation for 'Ich heiße Thomas'."
       }
     ]
+  },
+  // 9th grade German content
+  "novella": {
+    title: "Novellen",
+    subject: "german" as const,
+    gradeLevel: "9",
+    description: "Merkmale, Analyse und Interpretation von Novellen.",
+    videos: [
+      {
+        id: "video1",
+        title: "Was ist eine Novelle?",
+        description: "Grundlegende Merkmale und Aufbau von Novellen.",
+        videoId: "dQw4w9WgXcQ",
+      },
+      {
+        id: "video2",
+        title: "Berühmte deutsche Novellen",
+        description: "Überblick über wichtige Novellen der deutschen Literatur.",
+        videoId: "dQw4w9WgXcQ",
+      }
+    ],
+    exercises: [
+      {
+        question: "Welches ist KEIN typisches Merkmal einer Novelle?",
+        options: ["Unerhörte Begebenheit", "Rahmenhandlung", "Mehrere Haupthandlungsstränge", "Dingsymbol"],
+        correctAnswer: 2,
+        explanation: "Novellen haben typischerweise einen einzigen Handlungsstrang, nicht mehrere. Mehrere Handlungsstränge sind eher ein Merkmal von Romanen."
+      },
+      {
+        question: "Welche bekannte deutsche Novelle handelt von einem Pferd?",
+        options: ["Der Sandmann", "Die Judenbuche", "Michael Kohlhaas", "Der Schimmelreiter"],
+        correctAnswer: 2,
+        explanation: "Michael Kohlhaas von Heinrich von Kleist handelt von einem Pferdehändler, dessen Pferde unrechtmäßig beschlagnahmt werden, was den Hauptkonflikt der Handlung auslöst."
+      }
+    ]
+  },
+  // 9th grade English content
+  "tenses-advanced": {
+    title: "Fortgeschrittene Zeitformen",
+    subject: "english" as const,
+    gradeLevel: "9",
+    description: "Present Perfect Continuous, Past Perfect und ihre Anwendungen.",
+    videos: [
+      {
+        id: "video1",
+        title: "Present Perfect Continuous",
+        description: "Bildung und Verwendung des Present Perfect Continuous.",
+        videoId: "dQw4w9WgXcQ", 
+      },
+      {
+        id: "video2",
+        title: "Past Perfect",
+        description: "Wann und wie man das Past Perfect verwendet.",
+        videoId: "dQw4w9WgXcQ",
+      }
+    ],
+    exercises: [
+      {
+        question: "Which sentence uses the Present Perfect Continuous correctly?",
+        options: [
+          "I am learning English for five years.", 
+          "I have been learning English for five years.", 
+          "I have learned English for five years.", 
+          "I learn English for five years."
+        ],
+        correctAnswer: 1,
+        explanation: "The Present Perfect Continuous is used to express an action that started in the past, continues in the present, and may continue in the future. The correct form is 'have/has been + verb-ing'."
+      },
+      {
+        question: "When should you use the Past Perfect?",
+        options: [
+          "To talk about something that happened yesterday", 
+          "To talk about a habit in the past", 
+          "To talk about an action that happened before another past action", 
+          "To talk about future plans"
+        ],
+        correctAnswer: 2,
+        explanation: "The Past Perfect (had + past participle) is used to talk about an action that happened before another action in the past."
+      }
+    ]
   }
 };
 
@@ -162,6 +327,7 @@ const TopicPage = () => {
   }
   
   const topic = topicData[topicId as keyof typeof topicData];
+  const is9thGrade = topic.gradeLevel === "9";
   
   return (
     <div className="flex flex-col min-h-screen">
@@ -183,7 +349,14 @@ const TopicPage = () => {
                   Zurück zu {subject === 'math' ? 'Mathematik' : subject === 'german' ? 'Deutsch' : 'Englisch'}
                 </Link>
               </Button>
-              <h1 className="text-3xl md:text-4xl font-bold">{topic.title}</h1>
+              <div className="flex items-center">
+                <h1 className="text-3xl md:text-4xl font-bold">{topic.title}</h1>
+                {is9thGrade && (
+                  <span className="ml-3 inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">
+                    <GraduationCap className="mr-1 h-4 w-4" /> 9. Klasse
+                  </span>
+                )}
+              </div>
               <p className="text-muted-foreground text-lg">
                 Klasse {topic.gradeLevel} | {topic.description}
               </p>
