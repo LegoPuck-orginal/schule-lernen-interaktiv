@@ -387,4 +387,47 @@ const topicData = {
       {
         id: "video3",
         title: "Lineare Funktionen zeichnen",
-        description: "Wie
+        description: "Wie man lineare Funktionen in einem Koordinatensystem darstellt.",
+        videoId: "dQw4w9WgXcQ",
+      }
+    ],
+    exercises: [
+      {
+        question: "Was ist die allgemeine Form einer linearen Funktion?",
+        options: ["f(x) = x²", "f(x) = mx + b", "f(x) = 1/x", "f(x) = |x|"],
+        correctAnswer: 1,
+        explanation: "Die allgemeine Form einer linearen Funktion ist f(x) = mx + b, wobei m die Steigung und b der y-Achsenabschnitt ist."
+      },
+      {
+        question: "Welche der folgenden Funktionen ist linear?",
+        options: ["f(x) = x² + 2", "f(x) = 3x + 1", "f(x) = 1/x", "f(x) = √x"],
+        correctAnswer: 1,
+        explanation: "Die Funktion f(x) = 3x + 1 ist linear, da sie der Form f(x) = mx + b entspricht mit m = 3 und b = 1."
+      },
+      {
+        question: "Was bedeutet der Parameter m in der Funktion f(x) = mx + b?",
+        options: ["Den y-Achsenabschnitt", "Den x-Achsenabschnitt", "Die Steigung", "Den Funktionswert bei x = 0"],
+        correctAnswer: 2,
+        explanation: "Der Parameter m gibt die Steigung der Geraden an, also wie stark die Gerade ansteigt oder abfällt."
+      },
+      {
+        question: "Was bedeutet der Parameter b in der Funktion f(x) = mx + b?",
+        options: ["Den y-Achsenabschnitt", "Den x-Achsenabschnitt", "Die Steigung", "Den Funktionswert bei x = 1"],
+        correctAnswer: 0,
+        explanation: "Der Parameter b gibt den y-Achsenabschnitt an, also den Punkt, an dem die Gerade die y-Achse schneidet (bei x = 0)."
+      },
+      {
+        question: "Wie berechnet man den x-Achsenabschnitt einer linearen Funktion f(x) = mx + b?",
+        options: ["x = b", "x = -b/m", "x = m", "x = b/m"],
+        correctAnswer: 1,
+        explanation: "Der x-Achsenabschnitt ist der x-Wert, bei dem f(x) = 0 gilt. Also: 0 = mx + b ⟹ mx = -b ⟹ x = -b/m."
+      }
+    ]
+  }
+};
+
+const TopicPage = () => {
+  // ... keep existing code (component implementation)
+};
+
+export default TopicPage;
