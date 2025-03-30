@@ -29,7 +29,9 @@ const subjectData = {
       "9": [
         { id: "quadratic-functions", title: "Quadratische Funktionen", description: "Nullstellen, Scheitelpunktform und Anwendungen quadratischer Funktionen." },
         { id: "pythagoras", title: "Satz des Pythagoras", description: "Anwendung und Beweise des Satzes des Pythagoras." },
-        { id: "probability", title: "Wahrscheinlichkeitsrechnung", description: "Laplace-Experimente und bedingte Wahrscheinlichkeiten." },
+        { id: "linear-functions", title: "Lineare Funktionen", description: "Verstehe lineare Funktionen, ihre Eigenschaften und Anwendungen." },
+        { id: "polynomials", title: "Polynome und Polynomdivision", description: "Verstehe Polynome, ihre Eigenschaften und lerne die Polynomdivision." },
+        { id: "probability", title: "Wahrscheinlichkeitsrechnung", description: "Grundlagen der Wahrscheinlichkeitsrechnung und ihre Anwendungen." },
       ],
       // Add more grades...
     }

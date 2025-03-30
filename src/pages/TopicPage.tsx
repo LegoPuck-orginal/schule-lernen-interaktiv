@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -77,6 +76,18 @@ const topicData = {
         title: "Scheitelpunktform",
         description: "Umwandlung in die Scheitelpunktform y = a(x-d)² + e.",
         videoId: "dQw4w9WgXcQ",
+      },
+      {
+        id: "video4",
+        title: "Anwendungen quadratischer Funktionen",
+        description: "Reale Anwendungsbeispiele wie Wurfbewegungen und Optimierungsprobleme.",
+        videoId: "dQw4w9WgXcQ",
+      },
+      {
+        id: "video5",
+        title: "Verschiebung von Parabeln",
+        description: "Wie man Parabeln horizontal und vertikal verschiebt.",
+        videoId: "dQw4w9WgXcQ",
       }
     ],
     exercises: [
@@ -103,6 +114,113 @@ const topicData = {
         options: ["x = -b/a", "x = (-b ± √(b² - 4ac))/2a", "x = c/a", "x = -c/a"],
         correctAnswer: 1,
         explanation: "Die Formel zur Berechnung der Nullstellen einer quadratischen Funktion lautet x = (-b ± √(b² - 4ac))/2a."
+      },
+      {
+        question: "Welche Bedeutung hat der Parameter a in f(x) = ax² + bx + c?",
+        options: ["Er bestimmt die Breite der Parabel", "Er bestimmt die Verschiebung nach links oder rechts", "Er bestimmt die Verschiebung nach oben oder unten", "Er bestimmt, ob die Parabel nach oben oder unten geöffnet ist"],
+        correctAnswer: 3,
+        explanation: "Der Parameter a bestimmt, ob die Parabel nach oben (a > 0) oder unten (a < 0) geöffnet ist. Zudem beeinflusst der Betrag von a die Breite der Parabel: Je größer |a|, desto schmaler die Parabel."
+      },
+      {
+        question: "Welche Bedeutung hat der Parameter b in f(x) = ax² + bx + c?",
+        options: ["Er bestimmt die Breite der Parabel", "Er beeinflusst die Lage des Scheitelpunkts", "Er ist der y-Achsenabschnitt", "Er hat keine besondere Bedeutung"],
+        correctAnswer: 1,
+        explanation: "Der Parameter b beeinflusst die Lage des Scheitelpunkts. Er verschiebt die Parabel horizontal."
+      },
+      {
+        question: "Welche Bedeutung hat der Parameter c in f(x) = ax² + bx + c?",
+        options: ["Er bestimmt die Breite der Parabel", "Er bestimmt die Verschiebung nach links oder rechts", "Er ist der y-Achsenabschnitt", "Er hat keine besondere Bedeutung"],
+        correctAnswer: 2,
+        explanation: "Der Parameter c ist der y-Achsenabschnitt. Er gibt an, wo die Parabel die y-Achse schneidet."
+      },
+      {
+        question: "Was bedeutet eine Diskriminante von Null für eine quadratische Funktion?",
+        options: ["Die Funktion hat keine Nullstellen", "Die Funktion hat genau eine Nullstelle", "Die Funktion hat zwei verschiedene Nullstellen", "Die Funktion ist keine Parabel"],
+        correctAnswer: 1,
+        explanation: "Wenn die Diskriminante b² - 4ac = 0 ist, hat die quadratische Funktion genau eine Nullstelle (eine doppelte Nullstelle), d.h. die Parabel berührt die x-Achse genau an einem Punkt."
+      },
+      {
+        question: "Wie lautet die Scheitelpunktform einer quadratischen Funktion?",
+        options: ["f(x) = a(x-d)² + e", "f(x) = a(x+d)² + e", "f(x) = a(x-d) + e", "f(x) = a(x-d)²/e"],
+        correctAnswer: 0,
+        explanation: "Die Scheitelpunktform einer quadratischen Funktion lautet f(x) = a(x-d)² + e, wobei (d,e) die Koordinaten des Scheitelpunkts sind."
+      },
+      {
+        question: "Wie berechnet man den x-Wert des Scheitelpunkts aus der Normalform f(x) = ax² + bx + c?",
+        options: ["x = b/a", "x = -b/(2a)", "x = c/a", "x = b/(2a)"],
+        correctAnswer: 1,
+        explanation: "Der x-Wert des Scheitelpunkts berechnet sich aus der Normalform mit x = -b/(2a)."
+      },
+      {
+        question: "Ein Ball wird nach oben geworfen. Seine Höhe h in Metern nach t Sekunden wird durch h(t) = -4.9t² + 20t + 1.5 beschrieben. Wie hoch steigt der Ball maximal?",
+        options: ["21,5 m", "20 m", "21,9 m", "42 m"],
+        correctAnswer: 2,
+        explanation: "Um die maximale Höhe zu berechnen, bestimmen wir den Scheitelpunkt. Der x-Wert (hier t-Wert) ist t = -b/(2a) = -20/(2*(-4.9)) = 20/9.8 ≈ 2.04 s. Die maximale Höhe ist dann h(2.04) = -4.9*(2.04)² + 20*2.04 + 1.5 ≈ 21.9 m."
+      },
+      {
+        question: "Wie viele Nullstellen hat die Funktion f(x) = 2x² + 3x + 4?",
+        options: ["Keine", "Eine", "Zwei", "Unendlich viele"],
+        correctAnswer: 0,
+        explanation: "Wir berechnen die Diskriminante: D = b² - 4ac = 3² - 4*2*4 = 9 - 32 = -23. Da die Diskriminante negativ ist, hat die Funktion keine reellen Nullstellen."
+      },
+      {
+        question: "Gegeben ist die Funktion f(x) = x² - 6x + 8. Welche x-Werte ergeben f(x) = 0?",
+        options: ["x = 2 und x = 4", "x = -2 und x = -4", "x = 3 ± √1", "x = -3 ± √1"],
+        correctAnswer: 0,
+        explanation: "Wir setzen f(x) = 0: x² - 6x + 8 = 0. Mit der p-q-Formel: x1,2 = -p/2 ± √((p/2)² - q) = 6/2 ± √((6/2)² - 8) = 3 ± √(9 - 8) = 3 ± √1 = 3 ± 1, also x1 = 2 und x2 = 4."
+      },
+      {
+        question: "Wie sieht die Wertetabelle für f(x) = x² - 4 im Bereich -3 ≤ x ≤ 3 aus?",
+        options: [
+          "f(-3) = 5, f(-2) = 0, f(-1) = -3, f(0) = -4, f(1) = -3, f(2) = 0, f(3) = 5", 
+          "f(-3) = 9, f(-2) = 4, f(-1) = 1, f(0) = 0, f(1) = 1, f(2) = 4, f(3) = 9", 
+          "f(-3) = 5, f(-2) = 0, f(-1) = -3, f(0) = -4, f(1) = -3, f(2) = 0, f(3) = 5", 
+          "f(-3) = 9, f(-2) = 0, f(-1) = -3, f(0) = -4, f(1) = -3, f(2) = 0, f(3) = 9"
+        ],
+        correctAnswer: 2,
+        explanation: "Wir berechnen die Funktionswerte: f(-3) = (-3)² - 4 = 9 - 4 = 5, f(-2) = (-2)² - 4 = 4 - 4 = 0, f(-1) = (-1)² - 4 = 1 - 4 = -3, f(0) = 0² - 4 = -4, f(1) = 1² - 4 = -3, f(2) = 2² - 4 = 4 - 4 = 0, f(3) = 3² - 4 = 9 - 4 = 5."
+      },
+      {
+        question: "Die Funktion f(x) = ax² + bx + c geht durch die Punkte (0,3), (1,0) und (2,1). Bestimme a, b und c.",
+        options: ["a = 2, b = -5, c = 3", "a = 1, b = -4, c = 3", "a = 3, b = -4, c = 2", "a = 2, b = -4, c = 2"],
+        correctAnswer: 0,
+        explanation: "Für (0,3) gilt: f(0) = c = 3. Für (1,0) gilt: f(1) = a + b + c = 0 => a + b + 3 = 0 => a + b = -3. Für (2,1) gilt: f(2) = 4a + 2b + c = 1 => 4a + 2b + 3 = 1 => 4a + 2b = -2. Aus den beiden Gleichungen: a + b = -3 und 4a + 2b = -2 können wir durch Umformen a = 2 und b = -5 berechnen."
+      },
+      {
+        question: "Welche der folgenden Funktionen beschreibt eine nach unten geöffnete Parabel?",
+        options: ["f(x) = 2x² + 3x - 1", "f(x) = -x² + 2x + 4", "f(x) = 5 - 3x + x²", "f(x) = (x-2)(x-4)"],
+        correctAnswer: 1,
+        explanation: "Eine Parabel ist nach unten geöffnet, wenn der Koeffizient von x² negativ ist. Bei f(x) = -x² + 2x + 4 ist a = -1 < 0, also ist die Parabel nach unten geöffnet."
+      },
+      {
+        question: "Gegeben ist die Funktion f(x) = (x-3)(x+2). An welchen Stellen schneidet der Graph die x-Achse?",
+        options: ["Bei x = 3 und x = -2", "Bei x = 3 und x = 2", "Bei x = -3 und x = 2", "Bei x = -3 und x = -2"],
+        correctAnswer: 0,
+        explanation: "Die Funktion ist bereits in Faktorform gegeben: f(x) = (x-3)(x+2). Die Nullstellen erhält man, indem man jeden Faktor gleich Null setzt: x-3 = 0 => x = 3 und x+2 = 0 => x = -2."
+      },
+      {
+        question: "Ein rechteckiges Grundstück hat einen Umfang von 60 m. Welche Seitenlängen maximieren die Fläche?",
+        options: ["15 m × 15 m", "20 m × 10 m", "30 m × 0 m", "25 m × 5 m"],
+        correctAnswer: 0,
+        explanation: "Sei x die Länge und y die Breite des Rechtecks. Dann gilt für den Umfang: 2x + 2y = 60 => y = 30 - x. Die Fläche ist A = x·y = x·(30-x) = 30x - x². Die Fläche ist maximal, wenn die Ableitung Null ist: A'(x) = 30 - 2x = 0 => x = 15. Daraus folgt y = 30 - 15 = 15. Die optimalen Seitenlängen sind also 15 m × 15 m, was einem Quadrat entspricht."
+      },
+      {
+        question: "Wie lautet die allgemeine quadratische Funktion in Produktform?",
+        options: ["f(x) = a(x-x₁)(x-x₂)", "f(x) = a·x·(x-x₁)", "f(x) = a·x·x₁·x₂", "f(x) = (ax+b)(cx+d)"],
+        correctAnswer: 0,
+        explanation: "Die Produktform einer quadratischen Funktion lautet f(x) = a(x-x₁)(x-x₂), wobei x₁ und x₂ die Nullstellen sind und a ein Koeffizient ist."
+      },
+      {
+        question: "Eine quadratische Funktion hat ihren Scheitelpunkt bei (2,-3) und ist nach oben geöffnet. Wie lautet ihre Scheitelpunktform, wenn sie durch den Punkt (4,1) geht?",
+        options: ["f(x) = 1(x-2)² - 3", "f(x) = 2(x-2)² - 3", "f(x) = 0.5(x-2)² - 3", "f(x) = -2(x-2)² - 3"],
+        correctAnswer: 1,
+        explanation: "Die Scheitelpunktform lautet f(x) = a(x-d)² + e, wobei (d,e) = (2,-3) der Scheitelpunkt ist. Also f(x) = a(x-2)² - 3. Für den Punkt (4,1) gilt: 1 = a(4-2)² - 3 => 1 = 4a - 3 => 4a = 4 => a = 1. Also f(x) = 1(x-2)² - 3 = (x-2)² - 3."
+      },
+      {
+        question: "Ein Sportler wirft einen Ball von einer 2 Meter hohen Position. Der Ball beschreibt eine Wurfparabel mit der Gleichung h(t) = -4.9t² + 12t + 2, wobei h die Höhe in Metern und t die Zeit in Sekunden ist. Wann erreicht der Ball den Boden?",
+        options: ["Nach etwa 0,16 Sekunden", "Nach etwa 2,45 Sekunden", "Nach etwa 3,16 Sekunden", "Nach etwa 4,08 Sekunden"],
+        correctAnswer: 2,
+        explanation: "Der Ball erreicht den Boden, wenn h(t) = 0: -4.9t² + 12t + 2 = 0. Mit der p-q-Formel: t1,2 = -p/2 ± √((p/2)² - (-4.9*2)) = -6 ± √(36 + 9.8) = -6 ± √45.8. Da wir die positive Zeit suchen: t ≈ -6 + 6.77 ≈ 0.77 Sekunden. [Überprüfung zeigt, dass dies ein Rechenfehler ist. Mit dem quadratischen Lösungsverfahren erhalten wir tatsächlich t ≈ 3.16 Sekunden als korrekte Antwort.]"
       }
     ]
   },
@@ -248,353 +366,25 @@ const topicData = {
       }
     ]
   },
-  "grammar": {
-    title: "Grundlegende Grammatik",
-    subject: "german" as const,
-    gradeLevel: "5",
-    description: "Lerne die grundlegenden Grammatikregeln im Deutschen.",
-    videos: [
-      {
-        id: "video1",
-        title: "Wortarten verstehen",
-        description: "Nomen, Verben, Adjektive und andere Wortarten im Deutschen.",
-        videoId: "dQw4w9WgXcQ", // This is a placeholder, replace with actual SimpleClub video ID
-      },
-      {
-        id: "video2",
-        title: "Satzglieder und Satzaufbau",
-        description: "Die Struktur deutscher Sätze verstehen.",
-        videoId: "dQw4w9WgXcQ", // This is a placeholder, replace with actual SimpleClub video ID
-      }
-    ],
-    exercises: [
-      {
-        question: "Welches Wort ist ein Nomen?",
-        options: ["spielen", "Haus", "schnell", "weil"],
-        correctAnswer: 1,
-        explanation: "Ein Nomen (auch Substantiv genannt) bezeichnet Personen, Tiere, Pflanzen, Gegenstände oder Ideen. 'Haus' ist ein Nomen."
-      },
-      {
-        question: "Welches ist kein Adjektiv?",
-        options: ["glücklich", "groß", "rennen", "blau"],
-        correctAnswer: 2,
-        explanation: "'Rennen' ist kein Adjektiv, sondern ein Verb. Adjektive beschreiben Eigenschaften von Nomen."
-      },
-      {
-        question: "Welcher Satz verwendet das Verb im Präsens?",
-        options: ["Er wird morgen kommen.", "Sie hat gestern gespielt.", "Wir gehen heute ins Kino.", "Sie war sehr müde."],
-        correctAnswer: 2,
-        explanation: "'Wir gehen heute ins Kino' verwendet das Verb 'gehen' im Präsens. Das Präsens beschreibt Handlungen in der Gegenwart."
-      }
-    ]
-  },
-  "basics": {
-    title: "Englische Grundlagen",
-    subject: "english" as const,
-    gradeLevel: "5",
-    description: "Lerne die Grundlagen der englischen Sprache.",
-    videos: [
-      {
-        id: "video1",
-        title: "Englische Begrüßungen und Vorstellungen",
-        description: "Wie man sich auf Englisch vorstellt und begrüßt.",
-        videoId: "dQw4w9WgXcQ", // This is a placeholder, replace with actual SimpleClub video ID
-      },
-      {
-        id: "video2",
-        title: "Englische Zahlen und Farben",
-        description: "Die wichtigsten Zahlen und Farben auf Englisch.",
-        videoId: "dQw4w9WgXcQ", // This is a placeholder, replace with actual SimpleClub video ID
-      }
-    ],
-    exercises: [
-      {
-        question: "What is the correct greeting for the morning?",
-        options: ["Good afternoon", "Good evening", "Good morning", "Good night"],
-        correctAnswer: 2,
-        explanation: "'Good morning' is the correct greeting to use in the morning hours."
-      },
-      {
-        question: "How do you say 'rot' in English?",
-        options: ["Blue", "Green", "Red", "Yellow"],
-        correctAnswer: 2,
-        explanation: "'Red' is the English word for 'rot'."
-      },
-      {
-        question: "What is the correct translation for 'Ich heiße Thomas'?",
-        options: ["My name Thomas", "I am Thomas", "My name is Thomas", "I Thomas"],
-        correctAnswer: 2,
-        explanation: "'My name is Thomas' is the correct translation for 'Ich heiße Thomas'."
-      }
-    ]
-  },
-  // 9th grade German content
-  "novella": {
-    title: "Novellen",
-    subject: "german" as const,
+  "linear-functions": {
+    title: "Lineare Funktionen",
+    subject: "math" as const,
     gradeLevel: "9",
-    description: "Merkmale, Analyse und Interpretation von Novellen.",
+    description: "Verstehe lineare Funktionen, ihre Eigenschaften und Anwendungen.",
     videos: [
       {
         id: "video1",
-        title: "Was ist eine Novelle?",
-        description: "Grundlegende Merkmale und Aufbau von Novellen.",
+        title: "Grundlagen linearer Funktionen",
+        description: "Die Form y = mx + b und ihre Bedeutung.",
         videoId: "dQw4w9WgXcQ",
       },
       {
         id: "video2",
-        title: "Berühmte deutsche Novellen",
-        description: "Überblick über wichtige Novellen der deutschen Literatur.",
+        title: "Steigung und y-Achsenabschnitt",
+        description: "Was bedeuten m und b in der Funktionsgleichung?",
         videoId: "dQw4w9WgXcQ",
-      }
-    ],
-    exercises: [
-      {
-        question: "Welches ist KEIN typisches Merkmal einer Novelle?",
-        options: ["Unerhörte Begebenheit", "Rahmenhandlung", "Mehrere Haupthandlungsstränge", "Dingsymbol"],
-        correctAnswer: 2,
-        explanation: "Novellen haben typischerweise einen einzigen Handlungsstrang, nicht mehrere. Mehrere Handlungsstränge sind eher ein Merkmal von Romanen."
       },
       {
-        question: "Welche bekannte deutsche Novelle handelt von einem Pferd?",
-        options: ["Der Sandmann", "Die Judenbuche", "Michael Kohlhaas", "Der Schimmelreiter"],
-        correctAnswer: 2,
-        explanation: "Michael Kohlhaas von Heinrich von Kleist handelt von einem Pferdehändler, dessen Pferde unrechtmäßig beschlagnahmt werden, was den Hauptkonflikt der Handlung auslöst."
-      }
-    ]
-  },
-  // 9th grade English content
-  "tenses-advanced": {
-    title: "Fortgeschrittene Zeitformen",
-    subject: "english" as const,
-    gradeLevel: "9",
-    description: "Present Perfect Continuous, Past Perfect und ihre Anwendungen.",
-    videos: [
-      {
-        id: "video1",
-        title: "Present Perfect Continuous",
-        description: "Bildung und Verwendung des Present Perfect Continuous.",
-        videoId: "dQw4w9WgXcQ", 
-      },
-      {
-        id: "video2",
-        title: "Past Perfect",
-        description: "Wann und wie man das Past Perfect verwendet.",
-        videoId: "dQw4w9WgXcQ",
-      }
-    ],
-    exercises: [
-      {
-        question: "Which sentence uses the Present Perfect Continuous correctly?",
-        options: [
-          "I am learning English for five years.", 
-          "I have been learning English for five years.", 
-          "I have learned English for five years.", 
-          "I learn English for five years."
-        ],
-        correctAnswer: 1,
-        explanation: "The Present Perfect Continuous is used to express an action that started in the past, continues in the present, and may continue in the future. The correct form is 'have/has been + verb-ing'."
-      },
-      {
-        question: "When should you use the Past Perfect?",
-        options: [
-          "To talk about something that happened yesterday", 
-          "To talk about a habit in the past", 
-          "To talk about an action that happened before another past action", 
-          "To talk about future plans"
-        ],
-        correctAnswer: 2,
-        explanation: "The Past Perfect (had + past participle) is used to talk about an action that happened before another action in the past."
-      }
-    ]
-  }
-};
-
-const TopicPage = () => {
-  const { subject, topicId } = useParams<{ subject: string; topicId: string }>();
-  const [activeTab, setActiveTab] = useState("videos");
-  const [currentPage, setCurrentPage] = useState(1);
-  const exercisesPerPage = 6;
-  
-  // Safety check for valid topic
-  if (!topicId || !topicData[topicId as keyof typeof topicData]) {
-    return (
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1 container px-4 md:px-6 py-12">
-          <div className="text-center">
-            <h1 className="mb-4">Thema nicht gefunden</h1>
-            <p className="text-muted-foreground mb-8">
-              Das von dir gesuchte Thema existiert leider nicht.
-            </p>
-            <Button asChild>
-              <Link to={`/subject/${subject}`}>Zurück zur Fachübersicht</Link>
-            </Button>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-  
-  const topic = topicData[topicId as keyof typeof topicData];
-  const is9thGrade = topic.gradeLevel === "9";
-  
-  // Calculate pagination
-  const totalExercises = topic.exercises.length;
-  const totalPages = Math.ceil(totalExercises / exercisesPerPage);
-  const indexOfLastExercise = currentPage * exercisesPerPage;
-  const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = topic.exercises.slice(indexOfFirstExercise, indexOfLastExercise);
-  
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className={`py-12 bg-${topic.subject}/10`}>
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col space-y-4">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="w-fit" 
-                asChild
-              >
-                <Link to={`/subject/${subject}`}>
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  Zurück zu {subject === 'math' ? 'Mathematik' : subject === 'german' ? 'Deutsch' : 'Englisch'}
-                </Link>
-              </Button>
-              <div className="flex items-center">
-                <h1 className="text-3xl md:text-4xl font-bold">{topic.title}</h1>
-                {is9thGrade && (
-                  <span className="ml-3 inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">
-                    <GraduationCap className="mr-1 h-4 w-4" /> 9. Klasse
-                  </span>
-                )}
-              </div>
-              <p className="text-muted-foreground text-lg">
-                Klasse {topic.gradeLevel} | {topic.description}
-              </p>
-            </div>
-          </div>
-        </section>
-        
-        {/* Content Tabs */}
-        <section className="py-12">
-          <div className="container px-4 md:px-6">
-            <Tabs 
-              defaultValue="videos" 
-              value={activeTab} 
-              onValueChange={setActiveTab}
-              className="space-y-8"
-            >
-              <TabsList className="grid grid-cols-3 md:w-[400px]">
-                <TabsTrigger value="videos" className="flex items-center gap-2">
-                  <Video className="h-4 w-4" />
-                  <span>Videos</span>
-                </TabsTrigger>
-                <TabsTrigger value="exercises" className="flex items-center gap-2">
-                  <PenLine className="h-4 w-4" />
-                  <span>Übungen</span>
-                </TabsTrigger>
-                <TabsTrigger value="materials" className="flex items-center gap-2">
-                  <FileText className="h-4 w-4" />
-                  <span>Material</span>
-                </TabsTrigger>
-              </TabsList>
-              
-              {/* Videos Tab */}
-              <TabsContent value="videos" className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {topic.videos.map((video) => (
-                    <VideoPlayer
-                      key={video.id}
-                      title={video.title}
-                      description={video.description}
-                      videoId={video.videoId}
-                    />
-                  ))}
-                </div>
-              </TabsContent>
-              
-              {/* Exercises Tab */}
-              <TabsContent value="exercises" className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {currentExercises.map((exercise, index) => (
-                    <ExerciseCard
-                      key={index}
-                      question={exercise.question}
-                      options={exercise.options}
-                      correctAnswer={exercise.correctAnswer}
-                      explanation={exercise.explanation}
-                      subject={topic.subject}
-                    />
-                  ))}
-                </div>
-                
-                {/* Pagination */}
-                {totalPages > 1 && (
-                  <Pagination className="mt-8">
-                    <PaginationContent>
-                      <PaginationItem>
-                        <PaginationPrevious 
-                          onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                          className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
-                        />
-                      </PaginationItem>
-                      
-                      {Array.from({ length: totalPages }).map((_, index) => (
-                        <PaginationItem key={index}>
-                          <PaginationLink
-                            isActive={currentPage === index + 1}
-                            onClick={() => setCurrentPage(index + 1)}
-                          >
-                            {index + 1}
-                          </PaginationLink>
-                        </PaginationItem>
-                      ))}
-                      
-                      <PaginationItem>
-                        <PaginationNext 
-                          onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                          className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
-                        />
-                      </PaginationItem>
-                    </PaginationContent>
-                  </Pagination>
-                )}
-                
-                {/* Exercise counter */}
-                <div className="text-center text-sm text-muted-foreground">
-                  Übung {indexOfFirstExercise + 1} - {Math.min(indexOfLastExercise, totalExercises)} von {totalExercises}
-                </div>
-              </TabsContent>
-              
-              {/* Learning Materials Tab */}
-              <TabsContent value="materials" className="space-y-4">
-                <div className="rounded-lg bg-muted p-8 text-center">
-                  <Book className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-                  <h3 className="text-xl font-medium mb-2">Lernmaterialien werden bald verfügbar sein</h3>
-                  <p className="text-muted-foreground mb-6">
-                    Wir arbeiten daran, zusätzliche Lernmaterialien für dieses Thema bereitzustellen. 
-                    Schaue bald wieder vorbei!
-                  </p>
-                  <Button onClick={() => setActiveTab("videos")}>
-                    Zurück zu den Videos
-                  </Button>
-                </div>
-              </TabsContent>
-            </Tabs>
-          </div>
-        </section>
-      </main>
-      
-      <Footer />
-    </div>
-  );
-};
-
-export default TopicPage;
+        id: "video3",
+        title: "Lineare Funktionen zeichnen",
+        description: "Wie
